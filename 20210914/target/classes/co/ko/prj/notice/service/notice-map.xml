@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.ko.prj.notice.service.NoticeMapper">
+	<select id="noticeSelectList" resultType="co.ko.prj.notice.vo.NoticeVO">
+		select a.*, b.name
+		from notice a, member b
+		where a.writer = b.id
+		order by a.id desc
+	</select>
+	
+	<select id="noticeSelect" resultType="co.ko.prj.notice.vo.NoticeVO">
+		select a.*, b.name
+		from notice a, member b
+		where a.id = #{id} and a.writer = b.id
+	</select>
+	
+	<insert id="noticeInsert" parameterType="co.ko.prj.notice.vo.NoticeVO">
+		insert into notice(id, writer, writedate, title, contents)
+		values(n_id.nextval, #{writer}, #{writeDate}, #{title}, #{contents})
+	</insert>
+	
+	<update id="noticeUpdate" parameterType="co.ko.prj.notice.vo.NoticeVO">
+		update notice set title = #{title}, contents=#{contents}
+		where id = #{id}
+	</update>
+	
+	<delete id="noticeDelete" parameterType="co.ko.prj.notice.vo.NoticeVO">
+		delete from notice
+		where id = #{id}
+	</delete>
+</mapper>
