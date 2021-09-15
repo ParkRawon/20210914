@@ -11,4 +11,5 @@ public class MemberVO {
 	private String name;
 	private String address;
 	private String auth;
+	private String useyn;
 }

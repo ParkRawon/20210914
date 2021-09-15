@@ -3,16 +3,19 @@ package co.ko.prj.pages;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
 public class PageController {
 	
+
 	@RequestMapping("/login.do")
 	String login() {
 		return "pages/login";
 	}
 	
 	@RequestMapping("/register.do")
-	String register() {
+	String register(){
+				
 		return "pages/register";
 	}
 	

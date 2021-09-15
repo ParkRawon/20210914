@@ -21,6 +21,7 @@
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
+				
 				<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 					<thead>
 						<tr>
@@ -51,6 +52,16 @@
 			</div>
 		</div>
 	</div>
+	<div align="right">
+		<form action="noticeForm.do" method="post">
+			<button type="submit" class="btn btn-primary btn-icon-split">
+          		<span class="icon text-white-50">
+             		<i class="fas fa-flag"></i>
+          		</span>
+          		<span class="text">글쓰기</span>
+        	</button>
+        </form>
+	</div>	
 </div>
 <!-- /.container-fluid -->
 
